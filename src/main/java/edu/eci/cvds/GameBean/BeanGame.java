@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 @ManagedBean(name="guessBean")
 @SessionScoped
+
 public class BeanGame {
 	private int numIntentos;
 	private int numeroAdivinar;

@@ -12,24 +12,24 @@ and open the template in the editor.
     <h:body>
         <h:form id="guess_form">
 			<h:panelGrid id = "panel" columns = "1" 
-            cellpadding = "10" cellspacing = "1">
+            cellpadding = "10" cellspacing = "1"></h:panelGrid>
             <h1 class = "titulo">Bienvenido al juego, Adivine un numero entre 1 y 30!!!</h1>		
 			
             <h3>Inserte un numero</h3>
-				<p:inputText numero="intento" value="#{guessBean.numeroIntentado}"> </p:inputText>
+				<p:inputText numero="intento" value="#{guessBean.getNumIntentos()}"> </p:inputText>
 			
 			<h3>Numero a Adivinar</h3>
-				<p:outputLabel value="#{guessBean.numeroAdivinar}"></p:outputLabel>
+				<p:outputLabel value="#{guessBean.getNumeroAdivinar()}"></p:outputLabel>
 				
 			<h3>Puntaje</h3>
-				<p:outputLabel value="#{guessBean.puntaje}"></p:outputLabel>
+				<p:outputLabel value="#{guessBean.getPuntaje()}"></p:outputLabel>
 			
             <h3>Numero de intentos</h3>
-				<p:outputLabel value="#{guessBean.numIntentos}"></p:outputLabel>
+				<p:outputLabel value="#{guessBean.getNumIntentos()}"></p:outputLabel>
             
             <p:commandButton 
-				value ="Adivinar" update="guess_form" actionListener="#{guessBean.guess}"></p:commandButton>
-            <p:commandButton value="Nuevo" update="guess_form" actionListener="#{guessBean.restart}"></p:commandButton>
+			value ="Adivinar" update="guess_form" actionListener="#{guessBean.guess(numero.value)}"></p:commandButton>
+            <p:commandButton value="Nuevo" update="guess_form" actionListener="#{guessBean.restart()}"></p:commandButton>
             
         </h:form>
     </h:body>

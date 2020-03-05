@@ -9,28 +9,51 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
-    <h:body>
+<h:head>
+	<style>
+	 p1{color: #FFFFFF;}
+	 p2{color: #C0C0C0;}
+	 p4{color: #00FFFF;}
+	 p5{color: #00FF00;}
+	 h2{color: #FFFFFF;}
+	 h3{color: #C0C0C0;}
+	</style>
+</h:head>
+<h:body>
+	<table width="1366" height="657" background="background2.gif">
         <h:form id="guess_form">
-			<h:panelGrid id = "panel" columns = "1" 
+	<h:panelGrid id = "panel" columns = "1" 
             cellpadding = "10" cellspacing = "1"></h:panelGrid>
-            <h1 class = "titulo">Bienvenido al juego, Adivine un numero entre 1 y 30!!!</h1>		
-			
-            <h3>Inserte un numero</h3>
-				<p:inputText numero="intento" value="#{guessBean.getNumIntentos()}"> </p:inputText>
-			
-			<h3>Numero a Adivinar</h3>
-				<p:outputLabel value="#{guessBean.getNumeroAdivinar()}"></p:outputLabel>
-				
-			<h3>Puntaje</h3>
-				<p:outputLabel value="#{guessBean.getPuntaje()}"></p:outputLabel>
-			
-            <h3>Numero de intentos</h3>
-				<p:outputLabel value="#{guessBean.getNumIntentos()}"></p:outputLabel>
+            <h1 class = "titulo">
+		<p1><big>Welcome to the Game</big></p1>
+		<br/>
+		<p2>Objetivo:</p2>
+		<p1><pre>  Adivine un numero entre 1 y 30 <br/></pre></p1>
+		<p2>Premio:</p2>
+		<p4><pre>  <big><ins>$100.000</ins></big></pre></p4>
+	    </h1>
+            <h2>
+		Inserte un numero:
+				<p:inputText numro="intento" value="#{guessBean.guess(intento)}"> </p:inputText><br/><br/></h2>
+			<hr/>
+			<h3><big>Numero a Adivinar:</big>
+				<p:outputLabel value="#{guessBean.numeroAdivinar}"></p:outputLabel></h3>
+			<h2>
+			<big>	
+				P u
+				<p4>n</p4>
+				t a<p5> j </p5> e:
+			</big>
+				<p:outputLabel value="#{guessBean.puntaje}"></p:outputLabel>
+			<br/><br/>
+			<big>Numero de intentos:</big>
+				<p:outputLabel value="#{guessBean.numIntentos}"></p:outputLabel></h2>
             
             <p:commandButton 
-			value ="Adivinar" update="guess_form" actionListener="#{guessBean.guess(numero.value)}"></p:commandButton>
+			value ="Adivinar" update="guess_form" actionListener="#{guessBean.guess(Adivinar)}"></p:commandButton>
             <p:commandButton value="Nuevo" update="guess_form" actionListener="#{guessBean.restart()}"></p:commandButton>
             
         </h:form>
+	</table>
     </h:body>
 </html>
